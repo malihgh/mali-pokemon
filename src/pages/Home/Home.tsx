@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Text from '@/core/components/Text';
+import PokemonList from './components/PokemonList';
 
 const Home = () => {
   const [search, setSearch] = useState('');
@@ -17,9 +18,11 @@ const Home = () => {
         <input
           type="text"
           placeholder="Search name..."
-          className="p-2 border-solid border-2 border-gray-200 rounded-md w-2/3"
+          className="p-2 border-solid border-2 border-gray-200 rounded-md w-2/3 mb-8"
           value={search}
           onChange={e => setSearch(e.target.value)}></input>
+
+        <PokemonList />
       </div>
     </div>
   );
