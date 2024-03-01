@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <div className="h-screen w-full bg-no-repeat bg-cover bg-[url('/images/background.png')] py-16">
       <div className="mx-[10%] py-8 bg-white flex flex-col justify-center items-center">
-        <Text type="h1">Pokèdex</Text>
+        <Text type="h1">Pokédex</Text>
         <Text type="h3" className="mt-8 mb-2">
           Find your favorite Pokemon:
         </Text>
