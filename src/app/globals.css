@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: flexo-bold;
+  src: url('../../public/fonts/Flexo-Bold.woff') format('woff'),
+    url('../../public/fonts/Flexo-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: flexo;
+  src: url('../../public/fonts/Flexo-Regular.woff') format('woff'),
+    url('../../public/fonts/Flexo-Regular.woff2') format('woff2');
+}
