@@ -1,10 +1,10 @@
-import { pokemonDataType } from '@/pages/Home/types';
+import { PokemonDataType } from '@/pages/Home/types';
 import classNames from 'classnames';
 import { FC } from 'react';
 import Text from '../Text';
 
 type Props = {
-  data: pokemonDataType;
+  data: PokemonDataType;
   isSearched: boolean;
 };
 

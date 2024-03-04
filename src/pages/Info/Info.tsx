@@ -1,11 +1,11 @@
 import Container from '@/core/components/Container';
 import Text from '@/core/components/Text';
-import { pokemonDataType } from '../Home/types';
+import { PokemonDataType } from '../Home/types';
 import { FC } from 'react';
 import Image from 'next/image';
 
 type Props = {
-  data: pokemonDataType;
+  data: PokemonDataType;
 };
 
 const Info: FC<Props> = props => {

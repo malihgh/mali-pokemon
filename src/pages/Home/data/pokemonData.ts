@@ -1,6 +1,6 @@
-import { pokemonDataType } from '../types';
+import { PokemonDataType } from '../types';
 
-export const pokemonData: pokemonDataType[] = [
+export const pokemonData: PokemonDataType[] = [
   {
     id: 132,
     name: 'ditto',
