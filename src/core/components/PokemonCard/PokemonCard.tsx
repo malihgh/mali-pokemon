@@ -32,7 +32,7 @@ const PokemonCard: FC<Props> = props => {
           {idFillWithZero}
         </Text>
 
-        <Text type="h3" className="text-black font-flexoBold mt-3 mb-2">
+        <Text type="h3" className="text-[#000] font-flexoBold mt-3 mb-2">
           {capitalizeName(name)}
         </Text>
 
