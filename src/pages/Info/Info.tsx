@@ -5,6 +5,7 @@ import { FC } from 'react';
 import Image from 'next/image';
 import ChartContainer from './components/ChartContainer';
 import { pokemonData } from '../Home/data/pokemonData';
+import DeckButton from '@/core/components/DeckButton';
 
 type Props = {
   data: PokemonDataType;
@@ -20,21 +21,25 @@ const Info: FC<Props> = props => {
   const idFillWithZero = '#' + String(id).padStart(4, '0');
   return (
     <Container className="px-10">
-      <div className="flex items-center">
-        <Text type="h2" className="text-black font-flexo font-normal mr-4">
-          {capitalizeName(name)}
-        </Text>
-        <Text type="h2" className="text-gray-700">
-          {idFillWithZero}
-        </Text>
+      <div className="w-full flex phone:flex-col items-center justify-around phone:justify-between">
+        <div className="flex items-center phone:mb-5">
+          <Text type="h2" className="text-black font-flexo font-normal mr-4">
+            {capitalizeName(name)}
+          </Text>
+          <Text type="h2" className="text-gray-700">
+            {idFillWithZero}
+          </Text>
+        </div>
+
+        <DeckButton pokemonId={id} />
       </div>
 
-      <div className="w-full flex phone:flex-col items-start mt-12">
-        <div className="flex-grow max-w-[50%] phone:max-w-full mr-6 phone:mr-0">
+      <div className="w-full flex phone:flex-col items-start mt-12 phone:mt-5">
+        <div className="flex-grow max-w-[50%] phone:max-w-full phone:w-full mr-6 phone:mr-0">
           <Image
             src={sprite_image.front}
             alt={'pic'}
-            width={400}
+            width={430}
             height={400}
             className="bg-gray-200 rounded-md mb-6"
           />
@@ -42,11 +47,11 @@ const Info: FC<Props> = props => {
           <ChartContainer stats={pokemonData[0].stats} />
         </div>
 
-        <div className="flex-grow mt-10 phone:w-[90%] phone:mt-5">
-          <div className="bg-[#30a7d7] p-7 phone:p-5 rounded-md phone:mb-5">
-            <div className="flex mb-2">
+        <div className="flex-grow mt-10 phone:w-full phone:mt-5">
+          <div className="bg-[#30a7d7] p-7 pr-20 phone:p-5 rounded-md phone:mb-5">
+            <div className="flex mb-2 justify-between">
               <div>
-                <Text type="s" className="text-white mb-2 mr-28 phone:mr-36">
+                <Text type="s" className="text-white mb-2">
                   Height
                 </Text>
                 <Text type="s" className="text-black mb-2">

@@ -2,6 +2,7 @@ import { PokemonDataType } from '@/pages/Home/types';
 import classNames from 'classnames';
 import { FC } from 'react';
 import Text from '../Text';
+import DeckButton from '../DeckButton';
 
 type Props = {
   data: PokemonDataType;
@@ -52,7 +53,7 @@ const PokemonCard: FC<Props> = props => {
           </>
         )}
 
-        <div className="flex justify-start">
+        <div className="flex justify-start mb-3">
           {types.map((type, index) => (
             <div
               key={index}
@@ -63,6 +64,8 @@ const PokemonCard: FC<Props> = props => {
             </div>
           ))}
         </div>
+
+        {isSearched && <DeckButton pokemonId={id} />}
       </div>
     </div>
   );
