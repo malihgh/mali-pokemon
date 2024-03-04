@@ -23,8 +23,10 @@ const InfoDetails: FC<Props> = ({
             <Text type="s" className="text-white mb-2">
               Height
             </Text>
+
+            {/* Doc -> The height of this Pokémon in decimetres */}
             <Text type="s" className="text-black mb-2">
-              {height} cm
+              {height * 10} cm
             </Text>
           </div>
 
@@ -32,8 +34,10 @@ const InfoDetails: FC<Props> = ({
             <Text type="s" className="text-white mb-2">
               Weight
             </Text>
+
+            {/* Doc -> The weight of this Pokémon in hectograms. */}
             <Text type="s" className="text-black mb-2">
-              {weight} kg
+              {weight * 0.1} kg
             </Text>
           </div>
         </div>
