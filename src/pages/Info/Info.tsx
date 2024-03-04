@@ -17,7 +17,6 @@ const Info: FC<Props> = props => {
   const capitalizeName = (name: string) =>
     name.charAt(0).toUpperCase() + name.slice(1);
 
-  console.log('pppp');
   const idFillWithZero = '#' + String(id).padStart(4, '0');
   return (
     <Container className="px-10">
