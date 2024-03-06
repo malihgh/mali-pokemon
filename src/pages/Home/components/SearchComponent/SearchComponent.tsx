@@ -1,10 +1,10 @@
 import Text from '@/core/components/Text';
 import pokemonListContext from '@/core/context/pokemonListContext';
 import { ChangeEvent, FC, useContext, useState } from 'react';
-import { useGetData } from '../../hooks/useGetData';
+import useGetData from '../../hooks/useGetData';
 import { PokemonListType } from '@/core/api/types';
 import { getPokemonDetails } from '@/core/api/getPokemonDetails';
-import { limitStartSearching } from '../../constant/constant';
+import limitStartSearching from '../../constant/constant';
 
 type Props = {
   sendSearch: (value: string) => void;
@@ -38,7 +38,7 @@ const SearchComponent: FC<Props> = ({ sendSearch }) => {
     setSearch(newSearch);
     sendSearch(newSearch);
 
-    if (newSearch.length > limitStartSearching) {
+    if (newSearch.length > limitStartSearching()) {
       searchFunction(newSearch);
     }
   };

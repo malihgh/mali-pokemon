@@ -2,7 +2,7 @@ import { getPokemonList } from '@/core/api/getPokemonsList';
 import { PokemonListType } from '@/core/api/types';
 import { useCallback, useEffect, useState } from 'react';
 
-export function useGetData() {
+function useGetData() {
   const defaultData = [{ name: '', url: '' }];
   const [data, setData] = useState<PokemonListType[]>(defaultData);
 
@@ -18,3 +18,4 @@ export function useGetData() {
 
   return data;
 }
+export default useGetData;

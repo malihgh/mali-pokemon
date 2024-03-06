@@ -1,6 +1,6 @@
-import { PokemonDataType } from '../types';
+import { PokemonDataType } from '@/core/api/types';
 
-export const pokemonDataDefault: PokemonDataType[] = [
+const pokemonDataDefault = (): PokemonDataType[] => [
   {
     id: 132,
     name: 'ditto',
@@ -26,3 +26,4 @@ export const pokemonDataDefault: PokemonDataType[] = [
     ]
   }
 ];
+export default pokemonDataDefault;

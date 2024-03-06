@@ -7,13 +7,13 @@ import pokemonListContext from '@/core/context/pokemonListContext';
 import SearchComponent from './components/SearchComponent';
 import Text from '@/core/components/Text';
 import classNames from 'classnames';
-import { limitStartSearching } from './constant/constant';
+import limitStartSearching from './constant/constant';
 
 const Home = () => {
   const [search, setSearch] = useState('');
   const { pokemonData } = useContext(pokemonListContext);
 
-  let isSearch = search.length > limitStartSearching;
+  let isSearch = search.length > limitStartSearching();
 
   const setSearching = (search: string) => {
     setSearch(search);

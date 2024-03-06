@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { PokemonDataType } from '@/pages/Home/types';
+
 import InfoHeader from '../InfoHeader';
 import InfoImages from '../InfoImages';
 import InfoDetails from '../InfoDetails';
+import { PokemonDataType } from '@/core/api/types';
 
 type Props = {
   data: PokemonDataType;

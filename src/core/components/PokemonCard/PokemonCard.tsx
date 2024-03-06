@@ -1,4 +1,3 @@
-import { PokemonDataType } from '@/pages/Home/types';
 import classNames from 'classnames';
 import { FC } from 'react';
 import Text from '../Text';
@@ -6,6 +5,7 @@ import DeckButton from '../DeckButton';
 import Link from 'next/link';
 import Image from 'next/image';
 import { capitalizeName } from '@/core/api/transformer';
+import { PokemonDataType } from '@/core/api/types';
 
 type Props = {
   data: PokemonDataType;
