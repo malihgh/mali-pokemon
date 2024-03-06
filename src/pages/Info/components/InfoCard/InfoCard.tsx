@@ -33,7 +33,7 @@ const InfoCard: FC<Props> = ({ data }) => {
           height={height}
           weight={weight}
           abilities={abilities.map(i => i.name)}
-          types={types.map(i => i.name)}
+          types={types}
           moves={moves.map(i => i.name)}
         />
       </div>

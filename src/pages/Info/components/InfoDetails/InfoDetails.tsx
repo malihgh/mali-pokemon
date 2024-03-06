@@ -1,11 +1,12 @@
 import Text from '@/core/components/Text';
+import classNames from 'classnames';
 import { FC } from 'react';
 
 type Props = {
   height: number;
   weight: number;
   abilities: string[];
-  types: string[];
+  types: { name: string; color: string }[];
   moves: string[];
 };
 const InfoDetails: FC<Props> = ({
@@ -63,8 +64,12 @@ const InfoDetails: FC<Props> = ({
       </Text>
       <div className="flex justify-start">
         {types.map((type, index) => (
-          <div key={index} className="px-4 py-0.5 rounded-md bg-gray-300 mr-2">
-            <Text type="s">{type}</Text>
+          <div
+            key={index}
+            className={classNames(type.color, 'px-4 py-0.5 rounded-md mr-2')}>
+            <Text type="s" className="text-white">
+              {type.name}
+            </Text>
           </div>
         ))}
       </div>

@@ -9,7 +9,7 @@ export type PokemonDataType = {
   base_experience: number;
   sprite_image: { front: string; back: string };
   abilities: { name: string }[]; //only "is_hidden": false,
-  types: { name: string }[];
+  types: { name: string; color: string }[];
   moves: { name: string }[];
   height: number;
   weight: number;

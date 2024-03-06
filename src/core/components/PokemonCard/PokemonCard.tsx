@@ -24,12 +24,12 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
           alt={'pic'}
           width={430}
           height={400}
-          className="bg-gray-200 rounded-md mb-6"
+          className="bg-gray-200 rounded-md mb-1"
         />
       </Link>
 
       <div className="pb-5 px-3">
-        <Text type="s" className="text-sm font-flexoBold text-[#919191]">
+        <Text type="s" className="text-sm font-flexoBold text-[#989898]">
           {idFillWithZero}
         </Text>
 
@@ -64,8 +64,8 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
           {types.map((type, index) => (
             <div
               key={index}
-              className="px-4 py-0.5 rounded-md bg-gray-300 mr-2">
-              <Text type="s" className="text-xs">
+              className={classNames(type.color, 'px-4 py-0.5 rounded-md mr-2')}>
+              <Text type="s" className="text-xs text-white">
                 {type.name}
               </Text>
             </div>

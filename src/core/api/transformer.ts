@@ -1,5 +1,6 @@
 import { PokemonDataType } from '@/pages/Home/types';
 import { PokemonDetailsServerType } from './types';
+import { myColors } from './pokemonTypesColors';
 
 export const transformPokemonDetails = (
   props: PokemonDetailsServerType
@@ -38,7 +39,10 @@ export const transformPokemonDetails = (
     });
 
   const newTypes = types.map(type => {
-    return { name: capitalizeName(type.type.name) };
+    return {
+      name: capitalizeName(type.type.name),
+      color: ` bg-[${myColors.get(type.type.name) ?? '#777'}]`
+    };
   });
 
   const newMoves = moves.map(move => {
