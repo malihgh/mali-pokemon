@@ -13,19 +13,19 @@ const DeckButton: FC<Props> = ({ pokemonId }) => {
 
   const addToDeck = () => {
     if (list.length < 10) {
-      if (setDeckList) setDeckList(pre => [...pre, pokemonId]);
+      setDeckList(pre => [...pre, pokemonId]);
     } else {
       alert(
         'You already have 10 cards, we will remove your first card from deck to add this one....Is it OK?'
       );
       removeFromDeck(list[0]);
-      if (setDeckList) setDeckList(pre => [...pre, pokemonId]);
+      setDeckList(pre => [...pre, pokemonId]);
     }
   };
 
   const removeFromDeck = (id: number) => {
     const filteredNumbers = list.filter(item => item !== id);
-    if (setDeckList) setDeckList(filteredNumbers);
+    setDeckList(filteredNumbers);
   };
   return (
     <div>

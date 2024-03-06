@@ -8,10 +8,11 @@ import { getPokemonDetails } from '@/core/api/getPokemonDetails';
 type Props = {
   sendSearch: (value: string) => void;
 };
+
 const SearchComponent: FC<Props> = ({ sendSearch }) => {
   const [search, setSearch] = useState('');
-  const data = useGetData();
   const { pokemonData, setPokemonData } = useContext(pokemonListContext);
+  const data = useGetData();
 
   const searchFunction = async (searchValue: string) => {
     const searchResult = data.filter(item =>
@@ -27,7 +28,7 @@ const SearchComponent: FC<Props> = ({ sendSearch }) => {
 
     const newSearchedData = await getPokemonDetails(wanted);
 
-    if (setPokemonData) setPokemonData(prev => [...prev, ...newSearchedData]);
+    setPokemonData(prev => [...prev, ...newSearchedData]);
   };
 
   const searching = (e: any) => {

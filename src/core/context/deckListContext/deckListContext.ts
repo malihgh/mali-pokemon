@@ -2,12 +2,12 @@ import { createContext, Dispatch, SetStateAction } from 'react';
 
 type DeckListContextType = {
   list: number[] | [];
-  setDeckList: Dispatch<SetStateAction<number[]>> | null;
+  setDeckList: Dispatch<SetStateAction<number[]>>;
 };
 
 const DeckListContext = createContext<DeckListContextType>({
   list: [],
-  setDeckList: null
+  setDeckList: () => {}
 });
 
 export default DeckListContext;

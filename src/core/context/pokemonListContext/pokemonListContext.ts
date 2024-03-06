@@ -4,12 +4,12 @@ import { pokemonDataDefault } from '@/pages/Home/data/pokemonDataDefault';
 
 type PokemonListContextType = {
   pokemonData: PokemonDataType[];
-  setPokemonData: Dispatch<SetStateAction<PokemonDataType[]>> | null;
+  setPokemonData: Dispatch<SetStateAction<PokemonDataType[]>>;
 };
 
 const PokemonListContext = createContext<PokemonListContextType>({
   pokemonData: pokemonDataDefault,
-  setPokemonData: null
+  setPokemonData: () => {}
 });
 
 export default PokemonListContext;
