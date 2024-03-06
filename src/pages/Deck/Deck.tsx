@@ -34,7 +34,7 @@ const Deck = () => {
     0
   );
   return (
-    <Container className={classNames('px-10', isDeckEmpty && 'h-[82vh]')}>
+    <Container className={classNames('px-10', isDeckEmpty && 'h-screen')}>
       <Text type="h1">My Cards</Text>
 
       <div className="flex items-center mb-8">
