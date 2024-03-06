@@ -1,28 +1,53 @@
 'use client';
 
-import { useState } from 'react';
-import Text from '@/core/components/Text';
+import { useContext, useState } from 'react';
 import PokemonList from './components/PokemonList';
 import Container from '@/core/components/Container';
+import pokemonListContext from '@/core/context/pokemonListContext';
+import SearchComponent from './components/SearchComponent';
+import Text from '@/core/components/Text';
+import classNames from 'classnames';
 
 const Home = () => {
   const [search, setSearch] = useState('');
+  let isSearch = search.length > 2;
 
+  const setSearching = (search: string) => {
+    setSearch(search);
+  };
+
+  const { pokemonData } = useContext(pokemonListContext);
+
+  const visiblePokemon = isSearch
+    ? pokemonData.filter(item =>
+        item.name.toLowerCase().match(search.toLowerCase())
+      )
+    : search === ''
+    ? pokemonData
+    : [];
+
+  const notFound = isSearch && visiblePokemon.length === 0;
   return (
-    <Container>
-      <Text type="h1">Pokédex</Text>
-      <Text type="h3" className="mt-8 mb-2">
-        Find your favorite Pokemon:
-      </Text>
+    <Container
+      className={classNames(
+        (notFound || (!isSearch && search != '')) && 'h-[82vh]'
+      )}>
+      <SearchComponent sendSearch={setSearching} />
 
-      <input
-        type="text"
-        placeholder="Search name..."
-        className="p-2 border-solid border-2 border-gray-200 rounded-md w-2/3 mb-8"
-        value={search}
-        onChange={e => setSearch(e.target.value)}></input>
+      {notFound && (
+        <div className="h-full flex items-center">
+          <Text type="h3">Not Found!</Text>
+        </div>
+      )}
+      {!isSearch && search != '' && (
+        <div className="h-full flex items-center">
+          <Text type="h3">We need more letters...</Text>
+        </div>
+      )}
 
-      <PokemonList />
+      {visiblePokemon.length > 0 && (
+        <PokemonList data={visiblePokemon} isSearch={isSearch} />
+      )}
     </Container>
   );
 };
