@@ -41,7 +41,7 @@ const Deck = () => {
         <Text type="h3">All of your Base Experiences:</Text>
         <Text
           type="normal"
-          className="ml-7 p-3 bg-success text-white rounded-full">
+          className="ml-7 w-12 h-12 flex items-center justify-center p-3 bg-success text-white rounded-full">
           {countExperience}
         </Text>
       </div>
