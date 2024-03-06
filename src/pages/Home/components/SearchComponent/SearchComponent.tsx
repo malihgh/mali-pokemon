@@ -1,6 +1,6 @@
 import Text from '@/core/components/Text';
 import pokemonListContext from '@/core/context/pokemonListContext';
-import { FC, useContext, useState } from 'react';
+import { ChangeEvent, FC, useContext, useState } from 'react';
 import { useGetData } from '../../hooks/useGetData';
 import { PokemonListType } from '@/core/api/types';
 import { getPokemonDetails } from '@/core/api/getPokemonDetails';
@@ -32,12 +32,14 @@ const SearchComponent: FC<Props> = ({ sendSearch, limit }) => {
     setPokemonData(prev => [...prev, ...newSearchedData]);
   };
 
-  const searching = (e: any) => {
-    setSearch(e.target.value);
-    sendSearch(e.target.value);
+  const searching = (event: ChangeEvent<HTMLInputElement>) => {
+    const newSearch = event.target.value;
 
-    if (e.target.value.length > limit) {
-      searchFunction(e.target.value);
+    setSearch(newSearch);
+    sendSearch(newSearch);
+
+    if (newSearch.length > limit) {
+      searchFunction(newSearch);
     }
   };
   return (
