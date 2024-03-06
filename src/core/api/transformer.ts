@@ -17,8 +17,19 @@ export const transformPokemonDetails = (
     stats
   } = props;
 
-  const capitalizeName = (name: string) =>
-    name.charAt(0).toUpperCase() + name.slice(1);
+  const capitalizeName = (name: string) => {
+    const newName = name.split('-');
+
+    if (newName.length > 1) {
+      return (
+        newName[0].charAt(0).toUpperCase() +
+        newName[0].slice(1) +
+        ' ' +
+        newName[1].charAt(0).toUpperCase() +
+        newName[1].slice(1)
+      );
+    } else return name.charAt(0).toUpperCase() + name.slice(1);
+  };
 
   const newAbilities = abilities
     .filter(ability => ability.is_hidden)
