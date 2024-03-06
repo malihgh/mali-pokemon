@@ -7,8 +7,7 @@ import pokemonListContext from '@/core/context/pokemonListContext';
 import SearchComponent from './components/SearchComponent';
 import Text from '@/core/components/Text';
 import classNames from 'classnames';
-
-const limitStartSearching = 2;
+import { limitStartSearching } from './constant/constant';
 
 const Home = () => {
   const [search, setSearch] = useState('');
@@ -34,7 +33,7 @@ const Home = () => {
       className={classNames(
         (notFound || (!isSearch && search != '')) && 'h-screen'
       )}>
-      <SearchComponent sendSearch={setSearching} limit={limitStartSearching} />
+      <SearchComponent sendSearch={setSearching} />
 
       {notFound && (
         <div className="h-full flex items-center">
