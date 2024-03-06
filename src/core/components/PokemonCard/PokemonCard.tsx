@@ -11,10 +11,8 @@ type Props = {
   isSearched: boolean;
 };
 
-const PokemonCard: FC<Props> = props => {
-  const { id, name, sprite_image, types, abilities, base_experience } =
-    props.data;
-  const { isSearched } = props;
+const PokemonCard: FC<Props> = ({ data, isSearched }) => {
+  const { id, name, sprite_image, types, abilities, base_experience } = data;
 
   const capitalizeName = (name: string) =>
     name.charAt(0).toUpperCase() + name.slice(1);

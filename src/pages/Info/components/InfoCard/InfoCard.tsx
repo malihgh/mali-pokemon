@@ -8,7 +8,7 @@ type Props = {
   data: PokemonDataType;
 };
 
-const InfoCard: FC<Props> = props => {
+const InfoCard: FC<Props> = ({ data }) => {
   const {
     id,
     name,
@@ -19,7 +19,7 @@ const InfoCard: FC<Props> = props => {
     weight,
     moves,
     stats
-  } = props.data;
+  } = data;
 
   const capitalizeName = (name: string) =>
     name.charAt(0).toUpperCase() + name.slice(1);
