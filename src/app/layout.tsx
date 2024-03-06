@@ -17,6 +17,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link
+        rel="icon"
+        href="/images/template.png"
+        sizes="16x16"
+        type="image/png"
+      />
+      <link
+        rel="icon"
+        href="/images/template.png"
+        sizes="32x32"
+        type="image/png"
+      />
       <body className={inter.className}>
         <ContextProvider>{children}</ContextProvider>
       </body>
