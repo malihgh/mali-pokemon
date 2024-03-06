@@ -21,17 +21,10 @@ const InfoCard: FC<Props> = ({ data }) => {
     stats
   } = data;
 
-  const capitalizeName = (name: string) =>
-    name.charAt(0).toUpperCase() + name.slice(1);
-
   const idFillWithZero = '#' + String(id).padStart(4, '0');
   return (
     <>
-      <InfoHeader
-        name={capitalizeName(name)}
-        id={id}
-        idWithZero={idFillWithZero}
-      />
+      <InfoHeader name={name} id={id} idWithZero={idFillWithZero} />
 
       <div className="w-full flex phone:flex-col items-start mt-12 phone:mt-5">
         <InfoImages image={sprite_image.front} stats={stats} />
@@ -39,9 +32,9 @@ const InfoCard: FC<Props> = ({ data }) => {
         <InfoDetails
           height={height}
           weight={weight}
-          abilities={abilities.map(i => capitalizeName(i.name))}
-          types={types.map(i => capitalizeName(i.name))}
-          moves={moves.map(i => capitalizeName(i.name))}
+          abilities={abilities.map(i => i.name)}
+          types={types.map(i => i.name)}
+          moves={moves.map(i => i.name)}
         />
       </div>
     </>

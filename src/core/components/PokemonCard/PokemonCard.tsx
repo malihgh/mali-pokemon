@@ -14,9 +14,6 @@ type Props = {
 const PokemonCard: FC<Props> = ({ data, isSearched }) => {
   const { id, name, sprite_image, types, abilities, base_experience } = data;
 
-  const capitalizeName = (name: string) =>
-    name.charAt(0).toUpperCase() + name.slice(1);
-
   const idFillWithZero = '#' + String(id).padStart(4, '0');
 
   return (
@@ -37,7 +34,7 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
         </Text>
 
         <Text type="h3" className="text-[#000] font-flexoBold mt-3 mb-2">
-          {capitalizeName(name)}
+          {name}
         </Text>
 
         {isSearched && (
@@ -46,14 +43,12 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
               Base experience: {base_experience}
             </Text>
 
-            {/* fix it later -> , between abilities */}
-
             <Text type="s" className="flex">
               Abilities:
               {abilities.length > 0 ? (
                 abilities.map((ability, index) => (
                   <div key={index} className="pl-1">
-                    {capitalizeName(ability.name)}
+                    {ability.name}
                   </div>
                 ))
               ) : (
@@ -71,7 +66,7 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
               key={index}
               className="px-4 py-0.5 rounded-md bg-gray-300 mr-2">
               <Text type="s" className="text-xs">
-                {capitalizeName(type.name)}
+                {type.name}
               </Text>
             </div>
           ))}

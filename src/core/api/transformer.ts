@@ -17,27 +17,30 @@ export const transformPokemonDetails = (
     stats
   } = props;
 
+  const capitalizeName = (name: string) =>
+    name.charAt(0).toUpperCase() + name.slice(1);
+
   const newAbilities = abilities
     .filter(ability => ability.is_hidden)
     .map(ability => {
-      return { name: ability.ability.name };
+      return { name: capitalizeName(ability.ability.name) };
     });
 
   const newTypes = types.map(type => {
-    return { name: type.type.name };
+    return { name: capitalizeName(type.type.name) };
   });
 
   const newMoves = moves.map(move => {
-    return { name: move.move.name };
+    return { name: capitalizeName(move.move.name) };
   });
 
   const newStats = stats.map(stat => {
-    return { name: stat.stat.name, base_stat: stat.base_stat };
+    return { name: capitalizeName(stat.stat.name), base_stat: stat.base_stat };
   });
 
   return {
     id,
-    name,
+    name: capitalizeName(name),
     base_experience,
     sprite_image: { front: sprites.front_default, back: sprites.back_default },
     abilities: newAbilities,
