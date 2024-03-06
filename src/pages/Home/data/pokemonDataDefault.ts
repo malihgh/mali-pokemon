@@ -12,7 +12,7 @@ export const pokemonDataDefault: PokemonDataType[] = [
       back: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png'
     },
     abilities: [{ name: 'limber' }],
-    types: [{ name: 'normal', color: 'bg-[#A8A77A]' }],
+    types: [{ name: 'normal', color: 'normal' }],
     moves: [{ name: 'transform' }],
     height: 3,
     weight: 40,

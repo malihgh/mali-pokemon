@@ -30,11 +30,11 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
       </Link>
 
       <div className="pb-5 px-3">
-        <Text type="s" className="text-sm font-flexoBold text-[#989898]">
+        <Text type="s" className="text-sm font-flexoBold text-gray-400">
           {idFillWithZero}
         </Text>
 
-        <Text type="h3" className="text-[#000] font-flexoBold mt-3 mb-2">
+        <Text type="h3" className="text-night font-flexoBold mt-3 mb-2">
           {capitalizeName(name)}
         </Text>
 

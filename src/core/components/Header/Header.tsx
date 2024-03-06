@@ -35,8 +35,8 @@ export default function Header() {
             <Text
               type="normal"
               className={classNames(
-                'hover:bg-[#E3350D] p-4 hover:text-white hove:text-white border-b-4 rounded-md rounded-t-none border-[#E3350D]',
-                pathname === '/deck' && 'bg-[#E3350D] text-white'
+                'hover:bg-error p-4 hover:text-white hove:text-white border-b-4 rounded-md rounded-t-none border-error',
+                pathname === '/deck' && 'bg-error text-white'
               )}>
               My Cards
             </Text>

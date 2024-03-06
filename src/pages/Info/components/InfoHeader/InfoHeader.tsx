@@ -13,7 +13,7 @@ const InfoHeader: FC<Props> = ({ name, id, idWithZero }) => {
   return (
     <div className="w-full flex phone:flex-col items-center justify-around phone:justify-between">
       <div className="flex items-center phone:mb-5">
-        <Text type="h2" className="text-black font-flexo font-normal mr-4">
+        <Text type="h2" className="text-night font-flexo font-normal mr-4">
           {capitalizeName(name)}
         </Text>
         <Text type="h2" className="text-gray-700">

@@ -29,7 +29,9 @@ const config: Config = {
         'bg-dragon',
         'bg-dark',
         'bg-steel',
-        'bg-fairy'
+        'bg-fairy',
+        'bg-blue',
+        'text-success'
       ]
     }
   },
@@ -67,7 +69,11 @@ const config: Config = {
       dragon: '#6F35FC',
       dark: '#705746',
       steel: '#B7B7CE',
-      fairy: '#D685AD'
+      fairy: '#D685AD',
+      error: '#E3350D',
+      success: '#54b564',
+      blue: '#30a7d7',
+      night: '#000'
     },
     keyframes: {
       bounce: {
