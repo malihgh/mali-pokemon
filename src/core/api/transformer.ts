@@ -1,6 +1,5 @@
 import { PokemonDataType } from '@/pages/Home/types';
 import { PokemonDetailsServerType } from './types';
-import { myColors } from './pokemonTypesColors';
 
 export const capitalizeName = (name: string) => {
   const newName = name.split('-');
@@ -41,7 +40,7 @@ export const transformPokemonDetails = (
   const newTypes = types.map(type => {
     return {
       name: capitalizeName(type.type.name),
-      color: ` bg-[${myColors.get(type.type.name) ?? '#777'}]`
+      color: type.type.name
     };
   });
 

@@ -65,7 +65,10 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
           {types.map((type, index) => (
             <div
               key={index}
-              className={classNames(type.color, 'px-4 py-0.5 rounded-md mr-2')}>
+              className={classNames(
+                `bg-${type.color}`,
+                ' px-4 py-0.5 rounded-md mr-2'
+              )}>
               <Text type="s" className="text-xs text-white">
                 {type.name}
               </Text>
