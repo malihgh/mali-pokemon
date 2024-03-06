@@ -81,13 +81,19 @@ const InfoDetails: FC<Props> = ({
         Moves
       </Text>
       <div className="flex justify-start flex-wrap ">
-        {moves.map((type, index) => (
-          <div
-            key={index}
-            className="px-4 py-0.5 rounded-md bg-gray-300 mr-2 mb-2">
-            <Text type="s">{type}</Text>
-          </div>
-        ))}
+        {moves.length > 0 ? (
+          moves.map((type, index) => (
+            <div
+              key={index}
+              className="px-4 py-0.5 rounded-md bg-gray-300 mr-2 mb-2">
+              <Text type="s">{type}</Text>
+            </div>
+          ))
+        ) : (
+          <Text type="s" className="pl-1 text-night">
+            -
+          </Text>
+        )}
       </div>
     </div>
   );
