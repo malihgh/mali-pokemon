@@ -56,7 +56,10 @@ export const transformPokemonDetails = (
     id,
     name: name,
     base_experience,
-    sprite_image: { front: sprites.front_default, back: sprites.back_default },
+    sprite_image: {
+      front: sprites.front_default ?? '/images/template.png',
+      back: sprites.back_default
+    },
     abilities: newAbilities,
     types: newTypes,
     moves: newMoves,
