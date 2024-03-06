@@ -5,6 +5,7 @@ import Text from '../Text';
 import DeckButton from '../DeckButton';
 import Link from 'next/link';
 import Image from 'next/image';
+import { capitalizeName } from '@/core/api/transformer';
 
 type Props = {
   data: PokemonDataType;
@@ -34,7 +35,7 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
         </Text>
 
         <Text type="h3" className="text-[#000] font-flexoBold mt-3 mb-2">
-          {name}
+          {capitalizeName(name)}
         </Text>
 
         {isSearched && (

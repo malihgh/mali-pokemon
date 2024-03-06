@@ -2,6 +2,20 @@ import { PokemonDataType } from '@/pages/Home/types';
 import { PokemonDetailsServerType } from './types';
 import { myColors } from './pokemonTypesColors';
 
+export const capitalizeName = (name: string) => {
+  const newName = name.split('-');
+
+  if (newName.length > 1) {
+    return (
+      newName[0].charAt(0).toUpperCase() +
+      newName[0].slice(1) +
+      ' ' +
+      newName[1].charAt(0).toUpperCase() +
+      newName[1].slice(1)
+    );
+  } else return name.charAt(0).toUpperCase() + name.slice(1);
+};
+
 export const transformPokemonDetails = (
   props: PokemonDetailsServerType
 ): PokemonDataType => {
@@ -17,20 +31,6 @@ export const transformPokemonDetails = (
     weight,
     stats
   } = props;
-
-  const capitalizeName = (name: string) => {
-    const newName = name.split('-');
-
-    if (newName.length > 1) {
-      return (
-        newName[0].charAt(0).toUpperCase() +
-        newName[0].slice(1) +
-        ' ' +
-        newName[1].charAt(0).toUpperCase() +
-        newName[1].slice(1)
-      );
-    } else return name.charAt(0).toUpperCase() + name.slice(1);
-  };
 
   const newAbilities = abilities
     .filter(ability => ability.is_hidden)
@@ -55,7 +55,7 @@ export const transformPokemonDetails = (
 
   return {
     id,
-    name: capitalizeName(name),
+    name: name,
     base_experience,
     sprite_image: { front: sprites.front_default, back: sprites.back_default },
     abilities: newAbilities,
