@@ -14,15 +14,14 @@ const ChartContainer: FC<Props> = ({ stats }) => {
       {
         label: 'Base Stat',
         data: stats.map(stat => stat.base_stat),
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: '#30a7d7',
         borderWidth: 1,
         barThickness: 30
       }
     ]
   };
   return (
-    <div>
+    <div className="bg-gray-200 p-3 rounded-md">
       <Text type="s">Stats</Text>
       <Chart data={data} />
     </div>
