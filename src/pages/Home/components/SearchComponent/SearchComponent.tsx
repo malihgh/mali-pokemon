@@ -17,7 +17,6 @@ const SearchComponent: FC<Props> = ({ sendSearch }) => {
     const searchResult = data.filter(item =>
       item.name.toLowerCase().match(searchValue.toLowerCase())
     );
-    console.log('searchResult', searchResult);
 
     const wanted: PokemonListType[] = [];
     searchResult.forEach(pokemon => {
