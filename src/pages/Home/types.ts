@@ -1,4 +1,9 @@
-export type pokemonDataType = {
+export type PokemonDataStatType = {
+  base_stat: number;
+  name: string;
+};
+
+export type PokemonDataType = {
   id: number;
   name: string;
   base_experience: number;
@@ -8,5 +13,5 @@ export type pokemonDataType = {
   moves: { name: string }[];
   height: number;
   weight: number;
-  stats: { base_stat: number; name: string }[];
+  stats: PokemonDataStatType[];
 };
