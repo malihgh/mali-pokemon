@@ -14,7 +14,7 @@ const DeckButton: FC<Props> = ({ pokemonId }) => {
     <div>
       {isInDeck ? (
         <button
-          className="bg-[#E3350D;] px-3 py-1 rounded-md"
+          className="bg-[#E3350D] px-3 py-1 rounded-md"
           type="button"
           onClick={() => console.log('Remove from deck')}>
           <Text type="s" className="text-white">
