@@ -1,9 +1,22 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-const ChartComponent = ({ data }: any) => {
+type Props = {
+  data: {
+    labels: string[];
+    datasets: {
+      label: string;
+      data: number[];
+      backgroundColor: string;
+      borderWidth: number;
+      barThickness: number;
+    }[];
+  };
+};
+
+const ChartComponent: FC<Props> = ({ data }) => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
   const maxBaseStat = 535;
 

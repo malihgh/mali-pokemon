@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { transformPokemonDetails } from './transformer';
-import { PokemonDataType } from '@/pages/Home/types';
-import { pokemonDataDefault } from '@/pages/Home/data/pokemonDataDefault';
-import { PokemonListType } from './types';
+import pokemonDataDefault from '@/pages/Home/data/pokemonDataDefault';
+import { PokemonDataType, PokemonListType } from './types';
 
 const getPokemonDetail = async (url: string): Promise<PokemonDataType> => {
-  let result: PokemonDataType = pokemonDataDefault[0];
+  let result: PokemonDataType = pokemonDataDefault()[0];
 
   await axios
     .get(url)
@@ -18,7 +17,7 @@ const getPokemonDetail = async (url: string): Promise<PokemonDataType> => {
 };
 
 export const getPokemonDetails = async (props: PokemonListType[]) => {
-  let result: PokemonDataType[] = pokemonDataDefault;
+  let result: PokemonDataType[] = pokemonDataDefault();
   result = [];
 
   for (let i = 0; i < props.length; i++) {

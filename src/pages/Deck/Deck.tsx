@@ -7,8 +7,7 @@ import classNames from 'classnames';
 import { useContext } from 'react';
 import deckListContext from '@/core/context/deckListContext';
 import pokemonListContext from '@/core/context/pokemonListContext';
-
-import { PokemonDataType } from '../Home/types';
+import { PokemonDataType } from '@/core/api/types';
 
 const Deck = () => {
   const { list } = useContext(deckListContext);
@@ -34,14 +33,14 @@ const Deck = () => {
     0
   );
   return (
-    <Container className={classNames('px-10', isDeckEmpty && 'h-[82vh]')}>
+    <Container className={classNames('px-10', isDeckEmpty && 'h-screen')}>
       <Text type="h1">My Cards</Text>
 
       <div className="flex items-center mb-8">
         <Text type="h3">All of your Base Experiences:</Text>
         <Text
           type="normal"
-          className="ml-7 p-3 bg-[#54b564] text-white rounded-full">
+          className="ml-7 w-12 h-12 flex items-center justify-center p-3 bg-success text-white rounded-full">
           {countExperience}
         </Text>
       </div>

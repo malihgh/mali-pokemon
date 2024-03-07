@@ -7,16 +7,17 @@ import pokemonListContext from '@/core/context/pokemonListContext';
 import SearchComponent from './components/SearchComponent';
 import Text from '@/core/components/Text';
 import classNames from 'classnames';
+import limitStartSearching from './constant/constant';
 
 const Home = () => {
   const [search, setSearch] = useState('');
-  let isSearch = search.length > 2;
+  const { pokemonData } = useContext(pokemonListContext);
+
+  let isSearch = search.length > limitStartSearching();
 
   const setSearching = (search: string) => {
     setSearch(search);
   };
-
-  const { pokemonData } = useContext(pokemonListContext);
 
   const visiblePokemon = isSearch
     ? pokemonData.filter(item =>
@@ -30,7 +31,7 @@ const Home = () => {
   return (
     <Container
       className={classNames(
-        (notFound || (!isSearch && search != '')) && 'h-[82vh]'
+        (notFound || (!isSearch && search != '')) && 'h-screen'
       )}>
       <SearchComponent sendSearch={setSearching} />
 
@@ -39,6 +40,7 @@ const Home = () => {
           <Text type="h3">Not Found!</Text>
         </div>
       )}
+
       {!isSearch && search != '' && (
         <div className="h-full flex items-center">
           <Text type="h3">We need more letters...</Text>

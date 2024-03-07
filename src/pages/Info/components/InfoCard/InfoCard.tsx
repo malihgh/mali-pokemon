@@ -1,14 +1,15 @@
 import { FC } from 'react';
-import { PokemonDataType } from '@/pages/Home/types';
+
 import InfoHeader from '../InfoHeader';
 import InfoImages from '../InfoImages';
 import InfoDetails from '../InfoDetails';
+import { PokemonDataType } from '@/core/api/types';
 
 type Props = {
   data: PokemonDataType;
 };
 
-const InfoCard: FC<Props> = props => {
+const InfoCard: FC<Props> = ({ data }) => {
   const {
     id,
     name,
@@ -19,19 +20,12 @@ const InfoCard: FC<Props> = props => {
     weight,
     moves,
     stats
-  } = props.data;
-
-  const capitalizeName = (name: string) =>
-    name.charAt(0).toUpperCase() + name.slice(1);
+  } = data;
 
   const idFillWithZero = '#' + String(id).padStart(4, '0');
   return (
     <>
-      <InfoHeader
-        name={capitalizeName(name)}
-        id={id}
-        idWithZero={idFillWithZero}
-      />
+      <InfoHeader name={name} id={id} idWithZero={idFillWithZero} />
 
       <div className="w-full flex phone:flex-col items-start mt-12 phone:mt-5">
         <InfoImages image={sprite_image.front} stats={stats} />
@@ -39,9 +33,9 @@ const InfoCard: FC<Props> = props => {
         <InfoDetails
           height={height}
           weight={weight}
-          abilities={abilities.map(i => capitalizeName(i.name))}
-          types={types.map(i => capitalizeName(i.name))}
-          moves={moves.map(i => capitalizeName(i.name))}
+          abilities={abilities.map(i => i.name)}
+          types={types}
+          moves={moves.map(i => i.name)}
         />
       </div>
     </>
