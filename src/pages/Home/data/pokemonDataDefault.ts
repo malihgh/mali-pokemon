@@ -1,6 +1,6 @@
 import { PokemonDataType } from '../types';
 
-export const pokemonData: PokemonDataType[] = [
+export const pokemonDataDefault: PokemonDataType[] = [
   {
     id: 132,
     name: 'ditto',
@@ -10,7 +10,7 @@ export const pokemonData: PokemonDataType[] = [
       //   front:
       //     'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
       front:
-        'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/132.png',
+        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
       back: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png'
     },
     abilities: [{ name: 'limber' }],

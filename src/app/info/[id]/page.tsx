@@ -1,12 +1,9 @@
-import { pokemonData } from '@/pages/Home/data/pokemonData';
 import Info from '@/pages/Info';
 
-export default function InfoPage({ params }: { params: { id: number } }) {
-  console.log('params', params.id);
-
+export default function InfoPage({ params }: { params: { id: string } }) {
   return (
     <>
-      <Info data={pokemonData[0]} />
+      <Info pokemonId={+params.id} />
     </>
   );
 }
