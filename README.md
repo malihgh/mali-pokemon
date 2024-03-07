@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mali Pokèmon
 
-## Getting Started
+Simulation of pokemon website with the help of pokemon api ([https://pokeapi.co](https://pokeapi.co/)).
 
-First, run the development server:
+You can see any Pokemon by searching their name with at least 3 letters.
+
+You can add or remove Pokemon cards to your deck and review them through the deck, but your maximum number of cards will be 10.
+
+By clicking on the image of each card, you will be taken to the information page to view the details of that card.
+
+## Run the App
+
+For installing dependencies:
+
+```bash
+npm install
+```
+
+And For Start the app:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- For Having latest version you should get `readme` branch, and run these two command there again.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Project Structure
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+.
+├── app
+│   ├── deck
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── info
+│   │   └── [id]
+│   │       └── page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── core
+│   ├── api
+│   │   ├── getPokemonDetails.ts
+│   │   ├── getPokemonsList.ts
+│   │   ├── transformer.ts
+│   │   └── types.ts
+│   ├── components
+│   │   ├── Container
+│   │   │   ├── Container.tsx
+│   │   │   └── index.ts
+│   │   ├── DeckButton
+│   │   │   ├── DeckButton.tsx
+│   │   │   └── index.ts
+│   │   ├── Header
+│   │   │   ├── Header.tsx
+│   │   │   └── index.ts
+│   │   ├── PokemonCard
+│   │   │   ├── PokemonCard.tsx
+│   │   │   └── index.ts
+│   │   └── Text
+│   │       ├── Text.tsx
+│   │       └── index.ts
+│   ├── context
+│   │   ├── deckListContext
+│   │   │   ├── deckListContext.ts
+│   │   │   └── index.ts
+│   │   └── pokemonListContext
+│   │       ├── index.ts
+│   │       └── pokemonListContext.ts
+│   └── providers
+│       └── ContextProvider.tsx
+└── pages
+    ├── Deck
+    │   ├── Deck.tsx
+    │   └── index.ts
+    ├── Home
+    │   ├── Home.tsx
+    │   ├── components
+    │   │   ├── PokemonList
+    │   │   │   ├── PokemonList.tsx
+    │   │   │   └── index.ts
+    │   │   └── SearchComponent
+    │   │       ├── SearchComponent.tsx
+    │   │       └── index.ts
+    │   ├── constant
+    │   │   └── constant.ts
+    │   ├── data
+    │   │   └── pokemonDataDefault.ts
+    │   ├── hooks
+    │   │   └── useGetData.ts
+    │   ├── index.ts
+    │   └── types.ts
+    └── Info
+        ├── Info.tsx
+        ├── components
+        │   ├── Chart
+        │   │   ├── Chart.tsx
+        │   │   └── index.ts
+        │   ├── ChartContainer
+        │   │   ├── ChartContainer.tsx
+        │   │   └── index.ts
+        │   ├── InfoCard
+        │   │   ├── InfoCard.tsx
+        │   │   └── index.ts
+        │   ├── InfoDetails
+        │   │   ├── InfoDetails.tsx
+        │   │   └── index.ts
+        │   ├── InfoHeader
+        │   │   ├── InfoHeader.tsx
+        │   │   └── index.ts
+        │   └── InfoImages
+        │       ├── InfoImages.tsx
+        │       └── index.ts
+        └── index.ts
+```
