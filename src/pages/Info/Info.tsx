@@ -1,11 +1,13 @@
 import Container from '@/core/components/Container';
-import Text from '@/core/components/Text';
-import { pokemonDataType } from '../Home/types';
+import { PokemonDataType } from '../Home/types';
 import { FC } from 'react';
-import Image from 'next/image';
+import { pokemonData } from '../Home/data/pokemonData';
+import InfoHeader from './components/InfoHeader';
+import InfoDetails from './components/InfoDetails';
+import InfoImages from './components/InfoImages';
 
 type Props = {
-  data: pokemonDataType;
+  data: PokemonDataType;
 };
 
 const Info: FC<Props> = props => {
@@ -17,83 +19,23 @@ const Info: FC<Props> = props => {
 
   const idFillWithZero = '#' + String(id).padStart(4, '0');
   return (
-    <Container>
-      <div className="flex items-center">
-        <Text type="h2" className="text-black font-flexo font-normal mr-4">
-          {capitalizeName(name)}
-        </Text>
-        <Text type="h2" className="text-gray-700">
-          {idFillWithZero}
-        </Text>
-      </div>
+    <Container className="px-10">
+      <InfoHeader
+        name={capitalizeName(name)}
+        id={id}
+        idWithZero={idFillWithZero}
+      />
 
-      <div className="w-full flex phone:flex-col items-center px-10 mt-12">
-        <div className="flex-grow">
-          <Image
-            src={sprite_image.front}
-            alt={'pic'}
-            width={400}
-            height={400}
-            className="bg-gray-200 rounded-md"
-          />
-        </div>
+      <div className="w-full flex phone:flex-col items-start mt-12 phone:mt-5">
+        <InfoImages image={sprite_image.front} stats={pokemonData[0].stats} />
 
-        <div className="flex flex-col grow-[4] phone:w-[90%] justify-between">
-          <div className="bg-[#30a7d7] p-7 phone:p-5 rounded-md phone:my-5">
-            <div className="flex phone:flex-col mb-2">
-              <div>
-                <Text type="s" className="text-white mb-2 mr-28">
-                  Height
-                </Text>
-                <Text type="s" className="text-black mb-2">
-                  {height} cm
-                </Text>
-              </div>
-
-              <div>
-                <Text type="s" className="text-white mb-2">
-                  Weight
-                </Text>
-                <Text type="s" className="text-black mb-2">
-                  {weight} kg
-                </Text>
-              </div>
-            </div>
-
-            {/* fix it later -> , between abilities */}
-            <Text type="s" className="text-white mb-2">
-              Abilities:{' '}
-              {abilities.map((ability, index) => (
-                <Text type="s" className="text-black" key={index}>
-                  {capitalizeName(ability.name)}
-                </Text>
-              ))}
-            </Text>
-
-            {/* fix it later -> , between abilities */}
-            <Text type="s" className="text-white mb-2">
-              Moves:{' '}
-              {moves.map((ability, index) => (
-                <Text type="s" className="text-black" key={index}>
-                  {capitalizeName(ability.name)}
-                </Text>
-              ))}
-            </Text>
-          </div>
-
-          <Text type="s" className="my-4">
-            Type
-          </Text>
-          <div className="flex justify-start">
-            {types.map((type, index) => (
-              <div
-                key={index}
-                className="px-4 py-0.5 rounded-md bg-gray-300 mr-2">
-                <Text type="s">{capitalizeName(type.name)}</Text>
-              </div>
-            ))}
-          </div>
-        </div>
+        <InfoDetails
+          height={height}
+          weight={weight}
+          abilities={abilities.map(i => capitalizeName(i.name))}
+          types={types.map(i => capitalizeName(i.name))}
+          moves={moves.map(i => capitalizeName(i.name))}
+        />
       </div>
     </Container>
   );
