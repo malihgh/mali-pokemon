@@ -4,6 +4,7 @@ import { FC } from 'react';
 import Text from '../Text';
 import DeckButton from '../DeckButton';
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Props = {
   data: PokemonDataType;
@@ -23,12 +24,13 @@ const PokemonCard: FC<Props> = props => {
   return (
     <div className="m-1 hover:animate-bounce">
       <Link href={`/info/${id}`}>
-        {/* fix it later --> url */}
-        <div
-          className={classNames(
-            'w-full h-56 bg-no-repeat bg-cover bg-gray-200 rounded-lg',
-            `bg-[url('https://assets.pokemon.com/assets/cms2/img/pokedex/detail/132.png')]`
-          )}></div>
+        <Image
+          src={sprite_image.front}
+          alt={'pic'}
+          width={430}
+          height={400}
+          className="bg-gray-200 rounded-md mb-6"
+        />
       </Link>
 
       <div className="pb-5 px-3">
@@ -41,19 +43,28 @@ const PokemonCard: FC<Props> = props => {
         </Text>
 
         {isSearched && (
-          <>
+          <div className="mb-2">
             <Text type="s" className="mb-1">
               Base experience: {base_experience}
             </Text>
 
             {/* fix it later -> , between abilities */}
-            <Text type="s" className="mb-2">
-              Abilities:{' '}
-              {abilities.map((ability, index) => (
-                <>{capitalizeName(ability.name)}</>
-              ))}
+
+            <Text type="s" className="flex">
+              Abilities:
+              {abilities.length > 0 ? (
+                abilities.map((ability, index) => (
+                  <div key={index} className="pl-1">
+                    {capitalizeName(ability.name)}
+                  </div>
+                ))
+              ) : (
+                <Text type="s" className="pl-1">
+                  -
+                </Text>
+              )}
             </Text>
-          </>
+          </div>
         )}
 
         <div className="flex justify-start mb-3">

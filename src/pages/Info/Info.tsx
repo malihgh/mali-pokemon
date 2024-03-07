@@ -1,42 +1,34 @@
+'use client';
+
 import Container from '@/core/components/Container';
-import { PokemonDataType } from '../Home/types';
-import { FC } from 'react';
-import { pokemonData } from '../Home/data/pokemonData';
-import InfoHeader from './components/InfoHeader';
-import InfoDetails from './components/InfoDetails';
-import InfoImages from './components/InfoImages';
+import pokemonListContext from '@/core/context/pokemonListContext';
+import { FC, useContext } from 'react';
+import InfoCard from './components/InfoCard';
+import Text from '@/core/components/Text';
+import classNames from 'classnames';
 
 type Props = {
-  data: PokemonDataType;
+  pokemonId: number;
 };
 
-const Info: FC<Props> = props => {
-  const { id, name, sprite_image, types, abilities, height, weight, moves } =
-    props.data;
+const Info: FC<Props> = ({ pokemonId }) => {
+  const { pokemonData } = useContext(pokemonListContext);
 
-  const capitalizeName = (name: string) =>
-    name.charAt(0).toUpperCase() + name.slice(1);
+  const matchItems = pokemonData.filter(i => i.id === pokemonId)[0];
 
-  const idFillWithZero = '#' + String(id).padStart(4, '0');
   return (
-    <Container className="px-10">
-      <InfoHeader
-        name={capitalizeName(name)}
-        id={id}
-        idWithZero={idFillWithZero}
-      />
-
-      <div className="w-full flex phone:flex-col items-start mt-12 phone:mt-5">
-        <InfoImages image={sprite_image.front} stats={pokemonData[0].stats} />
-
-        <InfoDetails
-          height={height}
-          weight={weight}
-          abilities={abilities.map(i => capitalizeName(i.name))}
-          types={types.map(i => capitalizeName(i.name))}
-          moves={moves.map(i => capitalizeName(i.name))}
-        />
-      </div>
+    <Container className={classNames('px-10', !matchItems && 'h-[82vh]')}>
+      {matchItems ? (
+        <InfoCard data={matchItems} />
+      ) : (
+        <div className="h-full flex items-center">
+          <Text type="h3" className="flex flex-col items-center gap-4">
+            There is no information for
+            <Text type="h2">Pokemon with id: {pokemonId}</Text>
+            in our database!
+          </Text>
+        </div>
+      )}
     </Container>
   );
 };

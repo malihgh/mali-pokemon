@@ -19,7 +19,9 @@ const InfoImages: FC<Props> = ({ image, stats }) => {
         className="bg-gray-200 rounded-md mb-6"
       />
 
-      <ChartContainer stats={stats} />
+      <div className="w-full">
+        <ChartContainer stats={stats} />
+      </div>
     </div>
   );
 };

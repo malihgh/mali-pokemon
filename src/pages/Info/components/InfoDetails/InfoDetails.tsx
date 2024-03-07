@@ -16,7 +16,7 @@ const InfoDetails: FC<Props> = ({
   moves
 }) => {
   return (
-    <div className="flex-grow mt-10 phone:w-full phone:mt-5">
+    <div className="flex-grow mt-10 max-w-[50%] phone:w-full phone:mt-5">
       <div className="bg-[#30a7d7] p-7 pr-20 phone:p-5 rounded-md phone:mb-5">
         <div className="flex mb-2 justify-between">
           <div>
@@ -37,18 +37,24 @@ const InfoDetails: FC<Props> = ({
 
             {/* Doc -> The weight of this Pokémon in hectograms. */}
             <Text type="s" className="text-black mb-2">
-              {weight * 0.1} kg
+              {(weight * 0.1).toFixed(2)} kg
             </Text>
           </div>
         </div>
 
         <Text type="s" className="text-white mb-2">
-          Abilities:{' '}
-          {abilities.map((ability, index) => (
-            <Text type="s" className="text-black" key={index}>
-              {ability}
+          Abilities:
+          {abilities.length > 0 ? (
+            abilities.map((ability, index) => (
+              <Text type="s" className="text-black" key={index}>
+                {ability}
+              </Text>
+            ))
+          ) : (
+            <Text type="s" className="pl-1">
+              -
             </Text>
-          ))}
+          )}
         </Text>
       </div>
 
@@ -66,9 +72,11 @@ const InfoDetails: FC<Props> = ({
       <Text type="s" className="mt-7 mb-4">
         Moves
       </Text>
-      <div className="flex justify-start">
+      <div className="flex justify-start flex-wrap ">
         {moves.map((type, index) => (
-          <div key={index} className="px-4 py-0.5 rounded-md bg-gray-300 mr-2">
+          <div
+            key={index}
+            className="px-4 py-0.5 rounded-md bg-gray-300 mr-2 mb-2">
             <Text type="s">{type}</Text>
           </div>
         ))}
