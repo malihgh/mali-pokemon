@@ -7,8 +7,7 @@ import classNames from 'classnames';
 import { useContext } from 'react';
 import deckListContext from '@/core/context/deckListContext';
 import pokemonListContext from '@/core/context/pokemonListContext';
-
-import { PokemonDataType } from '../Home/types';
+import { PokemonDataType } from '@/core/api/types';
 
 const Deck = () => {
   const { list } = useContext(deckListContext);

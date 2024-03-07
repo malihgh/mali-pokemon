@@ -1,5 +1,4 @@
-import { PokemonDataType } from '@/pages/Home/types';
-import { PokemonDetailsServerType } from './types';
+import { PokemonDataType, PokemonDetailsServerType } from './types';
 
 export const capitalizeName = (name: string) => {
   const newName = name.split('-');

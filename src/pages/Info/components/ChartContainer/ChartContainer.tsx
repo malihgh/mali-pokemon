@@ -1,7 +1,7 @@
 import { FC } from 'react';
-import { PokemonDataStatType } from '@/pages/Home/types';
 import Chart from '../Chart';
 import Text from '@/core/components/Text';
+import { PokemonDataStatType } from '@/core/api/types';
 
 type Props = {
   stats: PokemonDataStatType[];

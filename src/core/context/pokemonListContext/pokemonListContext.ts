@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
-import { PokemonDataType } from '../../../pages/Home/types';
-import { pokemonDataDefault } from '@/pages/Home/data/pokemonDataDefault';
+import pokemonDataDefault from '@/pages/Home/data/pokemonDataDefault';
+import { PokemonDataType } from '@/core/api/types';
 
 type PokemonListContextType = {
   pokemonData: PokemonDataType[];
@@ -8,7 +8,7 @@ type PokemonListContextType = {
 };
 
 const PokemonListContext = createContext<PokemonListContextType>({
-  pokemonData: pokemonDataDefault,
+  pokemonData: pokemonDataDefault(),
   setPokemonData: () => {}
 });
 

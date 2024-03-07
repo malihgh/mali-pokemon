@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import PokemonCard from '@/core/components/PokemonCard';
-import { PokemonDataType } from '../../types';
+import { PokemonDataType } from '@/core/api/types';
 
 type Props = {
   data: PokemonDataType[];

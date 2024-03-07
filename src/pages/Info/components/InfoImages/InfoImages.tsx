@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import ChartContainer from '../ChartContainer';
-import { PokemonDataStatType } from '@/pages/Home/types';
+import { PokemonDataStatType } from '@/core/api/types';
 
 type Props = {
   image: string;
