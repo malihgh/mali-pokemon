@@ -26,3 +26,92 @@ npm run dev
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Project Structure
+
+```bash
+.
+├── app
+│   ├── deck
+│   │   └── page.tsx
+│   ├── globals.css
+│   ├── info
+│   │   └── [id]
+│   │       └── page.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+├── core
+│   ├── api
+│   │   ├── getPokemonDetails.ts
+│   │   ├── getPokemonsList.ts
+│   │   ├── transformer.ts
+│   │   └── types.ts
+│   ├── components
+│   │   ├── Container
+│   │   │   ├── Container.tsx
+│   │   │   └── index.ts
+│   │   ├── DeckButton
+│   │   │   ├── DeckButton.tsx
+│   │   │   └── index.ts
+│   │   ├── Header
+│   │   │   ├── Header.tsx
+│   │   │   └── index.ts
+│   │   ├── PokemonCard
+│   │   │   ├── PokemonCard.tsx
+│   │   │   └── index.ts
+│   │   └── Text
+│   │       ├── Text.tsx
+│   │       └── index.ts
+│   ├── context
+│   │   ├── deckListContext
+│   │   │   ├── deckListContext.ts
+│   │   │   └── index.ts
+│   │   └── pokemonListContext
+│   │       ├── index.ts
+│   │       └── pokemonListContext.ts
+│   └── providers
+│       └── ContextProvider.tsx
+└── pages
+    ├── Deck
+    │   ├── Deck.tsx
+    │   └── index.ts
+    ├── Home
+    │   ├── Home.tsx
+    │   ├── components
+    │   │   ├── PokemonList
+    │   │   │   ├── PokemonList.tsx
+    │   │   │   └── index.ts
+    │   │   └── SearchComponent
+    │   │       ├── SearchComponent.tsx
+    │   │       └── index.ts
+    │   ├── constant
+    │   │   └── constant.ts
+    │   ├── data
+    │   │   └── pokemonDataDefault.ts
+    │   ├── hooks
+    │   │   └── useGetData.ts
+    │   ├── index.ts
+    │   └── types.ts
+    └── Info
+        ├── Info.tsx
+        ├── components
+        │   ├── Chart
+        │   │   ├── Chart.tsx
+        │   │   └── index.ts
+        │   ├── ChartContainer
+        │   │   ├── ChartContainer.tsx
+        │   │   └── index.ts
+        │   ├── InfoCard
+        │   │   ├── InfoCard.tsx
+        │   │   └── index.ts
+        │   ├── InfoDetails
+        │   │   ├── InfoDetails.tsx
+        │   │   └── index.ts
+        │   ├── InfoHeader
+        │   │   ├── InfoHeader.tsx
+        │   │   └── index.ts
+        │   └── InfoImages
+        │       ├── InfoImages.tsx
+        │       └── index.ts
+        └── index.ts
+```
