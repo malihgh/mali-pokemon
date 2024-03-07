@@ -12,3 +12,21 @@ export type PokemonDetailsServerType = {
   weight: number;
   stats: { base_stat: number; stat: { name: string } }[];
 };
+
+export type PokemonDataStatType = {
+  base_stat: number;
+  name: string;
+};
+
+export type PokemonDataType = {
+  id: number;
+  name: string;
+  base_experience: number;
+  sprite_image: { front: string; back: string };
+  abilities: { name: string }[]; //only "is_hidden": false,
+  types: { name: string; color: string }[];
+  moves: { name: string }[];
+  height: number;
+  weight: number;
+  stats: PokemonDataStatType[];
+};

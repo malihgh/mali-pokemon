@@ -17,7 +17,7 @@ const Info: FC<Props> = ({ pokemonId }) => {
   const matchItems = pokemonData.filter(i => i.id === pokemonId)[0];
 
   return (
-    <Container className={classNames('px-10', !matchItems && 'h-[82vh]')}>
+    <Container className={classNames('px-10', !matchItems && 'h-screen')}>
       {matchItems ? (
         <InfoCard data={matchItems} />
       ) : (
