@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import PokemonListContext from '../context/pokemonListContext';
-import pokemonDataDefault from '@/pages/Home/data/pokemonDataDefault';
+import pokemonDataDefault from '@/features/Home/data/pokemonDataDefault';
 import DeckListContext from '../context/deckListContext';
 import { PokemonDataType } from '../api/types';
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { transformPokemonDetails } from './transformer';
-import pokemonDataDefault from '@/pages/Home/data/pokemonDataDefault';
+import pokemonDataDefault from '@/features/Home/data/pokemonDataDefault';
 import { PokemonDataType, PokemonListType } from './types';
 
 const getPokemonDetail = async (url: string): Promise<PokemonDataType> => {
