@@ -9,7 +9,7 @@ type Props = {
 const PokemonList: FC<Props> = ({ data, isSearch }) => {
   return (
     <div className="w-full grid grid-cols-3 phone:grid-cols-1 tablet:grid-cols-2 px-10">
-      {data.map(item => (
+      {data?.map(item => (
         <div key={item.id}>
           <PokemonCard data={item} isSearched={isSearch} />
         </div>

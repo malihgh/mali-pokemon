@@ -46,7 +46,7 @@ const InfoDetails: FC<Props> = ({
         <Text type="s" className="text-white mb-2">
           Abilities:
           {abilities.length > 0 ? (
-            abilities.map((ability, index) => (
+            abilities?.map((ability, index) => (
               <Text type="s" className="text-night" key={index}>
                 {ability}
               </Text>
@@ -63,7 +63,7 @@ const InfoDetails: FC<Props> = ({
         Type
       </Text>
       <div className="flex justify-start">
-        {types.map((type, index) => (
+        {types?.map((type, index) => (
           <div
             key={index}
             className={classNames(
@@ -82,7 +82,7 @@ const InfoDetails: FC<Props> = ({
       </Text>
       <div className="flex justify-start flex-wrap ">
         {moves.length > 0 ? (
-          moves.map((type, index) => (
+          moves?.map((type, index) => (
             <div
               key={index}
               className="px-4 py-0.5 rounded-md bg-gray-300 mr-2 mb-2">

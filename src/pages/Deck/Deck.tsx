@@ -51,7 +51,7 @@ const Deck = () => {
         </div>
       ) : (
         <div className="h-full w-full grid grid-cols-3 phone:grid-cols-1 tablet:grid-cols-2">
-          {matchItems().map(item => (
+          {matchItems()?.map(item => (
             <div key={item.id}>
               <PokemonCard data={item} isSearched={true} />
             </div>

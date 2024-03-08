@@ -47,7 +47,7 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
             <Text type="s" className="flex">
               Abilities:
               {abilities.length > 0 ? (
-                abilities.map((ability, index) => (
+                abilities?.map((ability, index) => (
                   <div key={index} className="pl-1">
                     {ability.name}
                   </div>
@@ -62,7 +62,7 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
         )}
 
         <div className="flex justify-start mb-3">
-          {types.map((type, index) => (
+          {types?.map((type, index) => (
             <div
               key={index}
               className={classNames(

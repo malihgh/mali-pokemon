@@ -32,22 +32,22 @@ export const transformPokemonDetails = (
 
   const newAbilities = abilities
     .filter(ability => ability.is_hidden)
-    .map(ability => {
+    ?.map(ability => {
       return { name: capitalizeName(ability.ability.name) };
     });
 
-  const newTypes = types.map(type => {
+  const newTypes = types?.map(type => {
     return {
       name: capitalizeName(type.type.name),
       color: type.type.name
     };
   });
 
-  const newMoves = moves.map(move => {
+  const newMoves = moves?.map(move => {
     return { name: capitalizeName(move.move.name) };
   });
 
-  const newStats = stats.map(stat => {
+  const newStats = stats?.map(stat => {
     return { name: capitalizeName(stat.stat.name), base_stat: stat.base_stat };
   });
 

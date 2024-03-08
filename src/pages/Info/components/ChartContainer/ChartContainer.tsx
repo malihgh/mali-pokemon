@@ -9,11 +9,11 @@ type Props = {
 
 const ChartContainer: FC<Props> = ({ stats }) => {
   const data = {
-    labels: stats.map(stat => stat.name),
+    labels: stats?.map(stat => stat.name),
     datasets: [
       {
         label: 'Base Stat',
-        data: stats.map(stat => stat.base_stat),
+        data: stats?.map(stat => stat.base_stat),
         backgroundColor: '#30a7d7',
         borderWidth: 1,
         barThickness: 30
