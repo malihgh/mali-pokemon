@@ -2,6 +2,10 @@
 
 Simulation of pokemon website with the help of pokemon api ([https://pokeapi.co](https://pokeapi.co/)).
 
+This is final Link of the website: [https://mali-pokemon.vercel.app/](https://mali-pokemon.vercel.app/)
+
+<!-- this is connected to other repo -->
+
 You can see any Pokemon by searching their name with at least 3 letters.
 
 You can add or remove Pokemon cards to your deck and review them through the deck, but your maximum number of cards will be 10.
