@@ -1,4 +1,4 @@
-import Deck from '@/pages/Deck';
+import Deck from '@/features/Deck';
 
 export default function App() {
   return <Deck />;
