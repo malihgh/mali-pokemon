@@ -28,7 +28,7 @@ const InfoCard: FC<Props> = ({ data }) => {
       <InfoHeader name={name} id={id} idWithZero={idFillWithZero} />
 
       <div className="w-full flex phone:flex-col items-start mt-12 phone:mt-5">
-        <InfoImages image={sprite_image.front} stats={stats} />
+        <InfoImages image={sprite_image.back} stats={stats} />
 
         <InfoDetails
           height={height}
