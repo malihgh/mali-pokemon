@@ -12,7 +12,8 @@ type Props = {
 
 const SearchComponent: FC<Props> = ({ sendSearch }) => {
   const [search, setSearch] = useState('');
-  const { pokemonData, setPokemonData } = useContext(pokemonListContext);
+  const { pokemonData, setPokemonData, setIsLoading } =
+    useContext(pokemonListContext);
   const data = useGetData();
 
   const searchFunction = async (searchValue: string) => {
@@ -28,7 +29,7 @@ const SearchComponent: FC<Props> = ({ sendSearch }) => {
     });
 
     const newSearchedData = await getPokemonDetails(wanted);
-
+    setIsLoading(false);
     setPokemonData(prev => [...prev, ...newSearchedData]);
   };
 
@@ -39,6 +40,7 @@ const SearchComponent: FC<Props> = ({ sendSearch }) => {
     sendSearch(newSearch);
 
     if (newSearch.length > limitStartSearching()) {
+      setIsLoading(true);
       searchFunction(newSearch);
     }
   };
