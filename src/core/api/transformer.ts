@@ -62,7 +62,7 @@ export const transformPokemonDetails = (
       back:
         id < 100
           ? `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/0${id}.png`
-          : id < 1025
+          : id < 1026
           ? `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png`
           : sprites.front_default ?? '/images/template.png'
     },
