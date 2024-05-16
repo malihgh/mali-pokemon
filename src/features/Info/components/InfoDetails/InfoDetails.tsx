@@ -17,7 +17,7 @@ const InfoDetails: FC<Props> = ({
   moves
 }) => {
   return (
-    <div className="flex-grow mt-10 max-w-[50%] phone:max-w-full phone:mt-5">
+    <div className="flex-grow mt-10 max-w-[50%] phone:max-w-full phone:w-full phone:mt-5">
       <div className="bg-blue p-7 pr-20 phone:p-5 rounded-md phone:mb-5">
         <div className="flex mb-2 justify-between">
           <div>
