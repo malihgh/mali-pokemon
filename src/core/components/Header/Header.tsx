@@ -38,7 +38,7 @@ export default function Header() {
                 'hover:bg-error p-4 hover:text-white hove:text-white border-b-4 rounded-md rounded-t-none border-error',
                 pathname === '/deck' && 'bg-error text-white'
               )}>
-              My Cards
+              Cards
             </Text>
           </Link>
         </div>
