@@ -21,9 +21,9 @@ const PokemonCard: FC<Props> = ({ data, isSearched }) => {
     <div className="m-1 hover:animate-bounce">
       <Link href={`/info/${id}`}>
         <Image
-          src={sprite_image.front}
+          src={sprite_image.back}
           alt={'pic'}
-          width={430}
+          width={400}
           height={400}
           className="bg-gray-200 rounded-md mb-1"
         />

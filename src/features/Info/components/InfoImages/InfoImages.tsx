@@ -14,7 +14,7 @@ const InfoImages: FC<Props> = ({ image, stats }) => {
       <Image
         src={image}
         alt={'pic'}
-        width={430}
+        width={400}
         height={400}
         className="bg-gray-200 rounded-md mb-6"
       />

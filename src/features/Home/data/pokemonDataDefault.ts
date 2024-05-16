@@ -5,11 +5,10 @@ const pokemonDataDefault = (): PokemonDataType[] => [
     id: 132,
     name: 'ditto',
     base_experience: 101,
-    // https://assets.pokemon.com/assets/cms2/img/pokedex/detail/132.png ---> Has better quality
     sprite_image: {
       front:
         'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png',
-      back: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png'
+      back: 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/132.png'
     },
     abilities: [{ name: 'Limber' }],
     types: [{ name: 'Normal', color: 'normal' }],
