@@ -8,10 +8,11 @@ import SearchComponent from './components/SearchComponent';
 import Text from '@/core/components/Text';
 import classNames from 'classnames';
 import limitStartSearching from './constant/constant';
+import Image from 'next/image';
 
 const Home = () => {
   const [search, setSearch] = useState('');
-  const { pokemonData } = useContext(pokemonListContext);
+  const { pokemonData, isLoading } = useContext(pokemonListContext);
 
   let isSearch = search.length > limitStartSearching();
 
@@ -31,11 +32,23 @@ const Home = () => {
   return (
     <Container
       className={classNames(
-        (notFound || (!isSearch && search != '')) && 'h-screen'
+        (notFound || (!isSearch && search != '') || isLoading) && 'h-screen'
       )}>
       <SearchComponent sendSearch={setSearching} />
 
-      {notFound && (
+      {isLoading && (
+        <div className="h-full flex items-center animate-bounce">
+          <Image
+            alt="loading"
+            src="/images/loading.png"
+            width={80}
+            height={80}
+            className="animate-spin"
+          />
+        </div>
+      )}
+
+      {notFound && !isLoading && (
         <div className="h-full flex items-center">
           <Text type="h3">Not Found!</Text>
         </div>

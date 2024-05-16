@@ -48,7 +48,8 @@ const config: Config = {
       tablet: { max: '1100px', min: '741px' }
     },
     animation: {
-      bounce: 'bounce 0.3s 0.5'
+      bounce: 'bounce 0.3s 0.5',
+      spin: 'spin 1s linear infinite'
     },
     colors: {
       ...colors,
@@ -85,6 +86,14 @@ const config: Config = {
         '50%': {
           transform: 'translateY(0)',
           'animation-timing-function': 'cubic-bezier(0,0,0.2,1);'
+        }
+      },
+      spin: {
+        from: {
+          transform: 'rotate(0deg)'
+        },
+        to: {
+          transform: 'rotate(360deg)'
         }
       }
     },

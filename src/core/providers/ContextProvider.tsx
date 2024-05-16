@@ -15,9 +15,11 @@ export default function ContextProvider({
     pokemonDataDefault()
   );
   const [deckList, setDeckList] = useState<number[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
-    <PokemonListContext.Provider value={{ pokemonData, setPokemonData }}>
+    <PokemonListContext.Provider
+      value={{ pokemonData, setPokemonData, isLoading, setIsLoading }}>
       <DeckListContext.Provider value={{ list: deckList, setDeckList }}>
         {children}
       </DeckListContext.Provider>

@@ -5,11 +5,15 @@ import { PokemonDataType } from '@/core/api/types';
 type PokemonListContextType = {
   pokemonData: PokemonDataType[];
   setPokemonData: Dispatch<SetStateAction<PokemonDataType[]>>;
+  isLoading: boolean;
+  setIsLoading: Dispatch<SetStateAction<boolean>>;
 };
 
 const PokemonListContext = createContext<PokemonListContextType>({
   pokemonData: pokemonDataDefault(),
-  setPokemonData: () => {}
+  setPokemonData: () => {},
+  isLoading: false,
+  setIsLoading: () => {}
 });
 
 export default PokemonListContext;
