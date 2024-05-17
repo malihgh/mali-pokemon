@@ -26,8 +26,6 @@ And For Start the app:
 npm run dev
 ```
 
-- For Having latest version you should get `readme` branch, and run these two command there again.
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
