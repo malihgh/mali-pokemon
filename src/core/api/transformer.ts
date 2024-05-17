@@ -50,7 +50,7 @@ export const transformPokemonDetails = (
   const newStats = stats?.map(stat => {
     return { name: capitalizeName(stat.stat.name), base_stat: stat.base_stat };
   });
-
+  const paddedId = String(id).padStart(3, '0');
   return {
     id,
     name: name,
@@ -60,10 +60,8 @@ export const transformPokemonDetails = (
       // I found new pokemon api with better image but it has images for first 1025 and the rest is not available
       // for id with less than 100, I add 0 in front of the id -> until works
       back:
-        id < 100
-          ? `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/0${id}.png`
-          : id < 1026
-          ? `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id}.png`
+        id < 1026
+          ? `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${paddedId}.png`
           : sprites.front_default ?? '/images/template.png'
     },
     abilities: newAbilities,
